@@ -1,1 +1,1 @@
-# react-native-ignite-igniteteams
+# react-native-igniteteams
