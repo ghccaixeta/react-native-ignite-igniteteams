@@ -12,6 +12,9 @@
       ],
       "@assets/*":[
         "./src/assets/*"
+      ],
+      "@storage/*":[
+        "./src/storage/*"
       ]
     }
   }
