@@ -15,7 +15,7 @@
       ],
       "@storage/*":[
         "./src/storage/*"
-      ]
+      ],
     }
   }
 }
