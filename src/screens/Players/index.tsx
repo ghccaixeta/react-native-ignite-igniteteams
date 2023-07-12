@@ -5,7 +5,7 @@ import { Highlight } from "@components/Highlight";
 import { ButtonIcon } from "@components/ButtonIcon";
 import { Input } from "@components/Input";
 import { Filter } from "@components/Filter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PlayerCard } from "@components/PlayerCard";
 import { ListEmpty } from "@components/ListEmpty";
 import { Button } from "@components/Button";
@@ -41,8 +41,7 @@ export function Players() {
 
     try {
       await playerAddByGroup(newPlayer, group);
-      const players = playersGetByGroup(group)
-      console.log(JSON.stringify(players))
+      fetchPlayersByTeam()
     } catch (error) {
       if(error instanceof AppError){
         Alert.alert('Nova pessoa', error.message);
@@ -61,6 +60,10 @@ export function Players() {
       
     }
   }
+
+  useEffect(()=>{
+    fetchPlayersByTeam()
+  },[team]);
 
   return (
     <Container>
